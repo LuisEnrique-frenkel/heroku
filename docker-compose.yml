@@ -1,18 +1,5 @@
 version: '3.6'
 services:
-  telegraf:
-    image: telegraf
-    container_name: telegraf
-    restart: always
-    volumes:
-    - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
-    depends_on:
-      - influxdb
-    links:
-      - influxdb
-    ports:
-    - '8125:8125'
-
   influxdb:
     image: influxdb:latest
     container_name: influxdb
